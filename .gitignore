@@ -1,0 +1,24 @@
+# Secrets & local env
+.env
+*.env
+service_account.json
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local data & logs
+logs/
+data/exports/
+# data/leads.csv
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
+# Research seeds
+finders/seeds_*.txt
