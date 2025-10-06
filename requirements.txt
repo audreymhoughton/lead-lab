@@ -1,0 +1,13 @@
+pandas>=2.2
+python-dotenv>=1.0
+requests>=2.32
+beautifulsoup4>=4.12
+tldextract>=5.1
+rapidfuzz>=3.9
+# Google Sheets
+gspread>=6.1
+google-auth>=2.35
+# Formatting & data validation helpers for Google Sheets
+gspread-formatting>=1.2
+# Optional local web form
+streamlit>=1.36
