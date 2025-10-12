@@ -14,7 +14,11 @@ from utils.logging_utils import log       # ← absolute
 import gspread.utils as gutils
 
 
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
+SCOPES = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive"
+]
+
 
 LEAD_HEADER = [
     "Company", "Website", "ContactName", "Role", "Email",
