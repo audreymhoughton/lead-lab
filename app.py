@@ -1,17 +1,28 @@
-# Absolute imports for script mode
+# app.py — CLI for lead-lab (script mode: run with `python app.py <command>`)
+# -----------------------------------------------------------------------------
 import argparse
 from datetime import date
 from typing import List
 import pandas as pd
 
+# Absolute imports (script mode)
 from config import settings
 from storage import init_store, add_rows, load_df
 from utils.logging_utils import log
 from enrich.site_meta import fetch_site_meta
-from finders.finder import find_from_urls
-from enrich.contact_enrich import enrich_contacts_for_df
 
-# Sheets backend selection
+# Optional helpers (import if present)
+try:
+    from finders.finder import find_from_urls
+except Exception:
+    find_from_urls = None
+
+try:
+    from enrich.contact_enrich import enrich_contacts_for_df
+except Exception:
+    enrich_contacts_for_df = None
+
+# Sheets backend selection (MOCK by default; real Sheets if SHEETS_BACKEND=SHEETS)
 if settings.sheets_backend == "SHEETS":
     from sheets.sheets_client import SheetsClient
 else:
